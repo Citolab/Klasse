@@ -1,0 +1,40 @@
+$theme-colors: ( 
+    "cito-cyan": #00A1C7,
+);
+
+@import "../../bootstrap/custom-bootstrap"; // '../node_modules/bootstrap/scss/bootstrap';
+@import "../../bootstrap/custom-utility-classes";
+@import "../../bootstrap/custom-cookie-consent";
+@import "../../bootstrap/browser-update";
+@import "../../bootstrap/theme-responsive";
+@import "../../bootstrap/theme-pagetransitions";
+
+// ----------------------------------------------------------------------------------------
+body {
+    background-color: $light;
+}
+
+@import "../../bootstrap/theme-input"; // -------------------------------------------------
+.enter {
+    color: $dark;
+}
+
+.masked {
+    color: $dark;
+    .characters {
+        border-bottom: 3px solid $info;
+    }
+}
+
+@import "../../bootstrap/theme-button"; // -------------------------------------------------
+.check {
+    &:after {
+        content: 'check';
+    }
+}
+
+@import "../../bootstrap/theme-timer"; // --------------------------------------------------
+
+
+
+@import "../../bootstrap/theme-success"; // ------------------------------------------------

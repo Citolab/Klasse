@@ -1,0 +1,22 @@
+.timer-enter-active {
+    transition: all 0.1s ease;
+}
+
+.timer-leave-active {
+    transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.timer-enter,
+.timer-leave-to {
+    transform: translateX(14px);
+    opacity: 0.5;
+}
+
+
+.timer.clock-warning {
+    @extend .text-warning;
+}
+
+.timer.clock-danger {
+    @extend .text-danger;
+}

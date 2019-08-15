@@ -1,0 +1,67 @@
+
+
+
+
+
+.enter {
+    left: 0; // positioned over the dashes
+    top: 0; // positioned over the dashes
+    position: absolute; // positioned over the dashes
+    margin: 0; // Safari IOS needs this else characters are not aligned on the dashes
+    padding: 0; // Safari IOS needs this else characters are not aligned on the dashes
+    opacity: 1;
+    transition: opacity 1s;
+    text-transform: uppercase;
+    font: 2.4rem consolas, monospace;
+    border: none; // remove default border from input
+    background: transparent; // shows the dashes beneath
+    letter-spacing: 10px; // same as dash spacing
+    &:focus {
+        outline: none; // no ugly blue border
+    }
+}
+
+.code {
+    font: 2.4rem consolas, monospace;
+    letter-spacing: 10px; // same as dash spacing
+    border-right: .15em solid orange;
+    animation: 
+    blink-caret .75s step-end infinite;
+}
+
+.characters {
+    font: 2.4rem consolas, monospace;
+    letter-spacing: 10px; // same as dash spacing
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+.masked {
+    position: relative;
+    font: 2.4rem consolas, monospace;
+    border: none;
+    
+    .placeholders {
+        display:inline-block;
+        margin-right: 10px;
+    }
+}
+
+::-ms-clear {
+    display: none; // clears the 'X' from Internet Explorer
+}
+
+input[type=text]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type=text]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}

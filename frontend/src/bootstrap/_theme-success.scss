@@ -1,0 +1,40 @@
+$d: 30px;
+.particle {
+    position: absolute;
+    width: $d;
+    height: $d;
+    animation: shoot 3s ease-out infinite;
+    animation-name: shoot, fade;
+    @for $i from 0 to 100 {
+        $t: (1 + .01*random(100))*1s;
+        &:nth-child(#{$i + 1}) {
+            transform: translate(random(1000)*1px, random(600)*1px); // background: hsl(random(360), 100%, 65%);
+            background: rgba($light, 0.6 + (random(4) / 10));
+            animation-duration: $t;
+            animation-delay: -.01*random(100)*$t;
+        }
+    }
+}
+
+@keyframes shoot {
+    0% {
+        transform: translate(500px, 300px);
+    }
+}
+
+@keyframes fade {
+    to {
+        opacity: 0;
+    }
+}
+
+.success {
+    z-index: 0;
+    margin-left: 50%;
+    margin-top: 10%;
+    transform: translateX(-50%);
+    top: calc(50% - 550px);
+    overflow: visible;
+    width: 1000px;
+    height: 600px;
+}

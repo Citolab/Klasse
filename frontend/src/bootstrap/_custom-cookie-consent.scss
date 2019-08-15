@@ -1,0 +1,26 @@
+
+$cookieconstent-background: white;
+$cookieconstent-width : 50%;
+$cookieconstent-padding : 0.5rem;
+
+@import "~vue-cookieconsent-component/src/scss/cookie-consent";
+
+.cookie-consent-transition {
+    &-leave-active {
+      transition: transform .75s;
+      transition-timing-function: cubic-bezier(.75,0,0,1);
+    }
+    &-leave-to {
+      transform: translateY(-100%);
+    }
+  }
+  
+  .cookie-consent {
+    left: 50%;
+    border-bottom-left-radius: 1rem;
+    font-size: 0.6rem !important;
+    
+    .btn {
+        font-size: 0.6rem !important;
+    }
+  }

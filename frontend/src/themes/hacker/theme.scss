@@ -1,0 +1,143 @@
+// $enable-shadows: true;
+// $enable-gradients: true;
+$enable-rounded: false;
+$enable-transitions: true;
+$danger: #ff0000;
+$warning: #ff8800;
+$light: #daf6ff;
+$hacker: rgba(10, 175, 230, 1);
+
+$theme-colors: ( 
+    "cito-cyan": #00A1C7,
+    "hacker": $hacker
+);
+
+@import "../../bootstrap/custom-bootstrap"; // '../node_modules/bootstrap/scss/bootstrap';
+@import "../../bootstrap/custom-utility-classes";
+@import "../../bootstrap/custom-cookie-consent";
+@import "../../bootstrap/browser-update";
+@import "../../bootstrap/theme-responsive";
+@import "../../bootstrap/theme-pagetransitions";
+
+
+
+@import "./fonts/graph-35-pix/stylesheet.css";
+
+@mixin text-glow($color) {
+    text-shadow: 0 0 40px lighten($color, 10%), 0 0 40px lighten($color, 30%);
+}
+
+@mixin box-glow {
+    box-shadow: 0 0 40px rgba(10, 175, 230, 1), 0 0 40px rgba(10, 175, 230, 0.8);
+}
+
+body {
+    color: $light;
+    background-image: url("images/hacker.jpg"); // radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%) ;
+    background-size: auto 100%;
+    background-position: center;
+    font-family: "Cantarell";
+}
+
+.button-large, .button-small {
+    @extend .btn;
+    @extend .btn-outline-light;
+    @extend .border-2;
+    @extend .text-uppercase;
+    @extend .font-weight-bold;
+}
+.button-large {    
+    @extend .btn-lg;
+}
+
+.title {
+    font-family: "graph_35_pixregular";
+}
+
+@import "../../bootstrap/theme-input"; // -------------------------------------------------
+.enter {
+    // color:transparent;
+    color: lighten($hacker, 30);
+    // @include text-glow($hacker);
+}
+
+.masked {
+    color: lighten($hacker, 30);
+    .placeholders {
+        background-color: rgba(10, 175, 230, 0.2);
+        border-bottom: 3px solid $hacker;
+    }
+}
+
+@import "../../bootstrap/theme-button"; // ------------------------------------------------
+.button-password {
+    @extend .btn;
+    @extend .btn-light;
+    border-radius: 50%;
+    @include box-glow;
+    width: 4rem;
+    height: 4rem;
+    // &:after {
+    //     position: relative;
+    //     top: -0.3rem;
+    //     content: url("");
+    // }
+    &:disabled {
+        box-shadow: none;
+    }
+}
+
+
+@import "../../bootstrap/theme-timer"; // -------------------------------------------------
+.timer {
+    font-family: "graph_35_pixregular";
+    @include text-glow($hacker);
+    
+    &.clock-danger {
+        @include text-glow($danger);
+    }
+    &.clock-warning {
+        @include text-glow($warning);
+    }
+}
+
+
+@import "../../bootstrap/theme-success"; // -------------------------------------------------
+$d: random(20) * 2;
+.particle {
+    @include box-glow;
+    width: 1rem;
+    height: 1rem; // animation-duration: 5s !important;
+    animation-name: shoot, fade;
+}
+
+/* ----===== Theme based styles =====---- */
+
+
+.window-frame {
+  margin-right: 6rem;
+  padding: 2rem 1rem 2rem 1rem;
+  background-image: url("./images/frame-top.svg"),
+    url("./images/frame-buttons.svg"), url("./images/frame.svg"),
+    url("./images/frame-bottom.svg");
+  background-size: 100%, 100%, 100%, 100%;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: center top, right top, center center, center bottom;
+}
+
+// .window-frame .introtext {
+//     &:after {
+//     content: "";
+    
+//     // position: relative;
+//     //   top: 0;
+//     border-right: 3px solid #daf6ff;
+//     animation: blink 1s step-end infinite;
+//     }
+// }
+
+// @keyframes blink {
+//     from,
+//     to { border-color: transparent; }
+//     50% { border-color: #daf6ff;  }
+// }

@@ -1,0 +1,41 @@
+.page-enter-active {
+    transition: all 0.1s ease;
+}
+
+.page-leave-active {
+    transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.page-enter,
+.page-leave-to {
+    transform: translateX(14px);
+    opacity: 0.5;
+}
+
+
+
+.slide-enter-active {
+  animation: slide 1s;
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.zoom-enter-active {
+  animation: zoom 1s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(1);
+  }
+}
