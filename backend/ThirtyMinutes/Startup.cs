@@ -14,7 +14,7 @@ namespace ThirtyMinutes
     public class Startup
     {
         public IConfiguration Configuration { get; }
-        bool useInMemoryDatabase = false;
+        bool useInMemoryDatabase = true;
 
         public Startup(IHostingEnvironment hostingEnvironment)
         {
